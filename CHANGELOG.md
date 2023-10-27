@@ -1,5 +1,27 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- 
+
+### Changed
+
+- 
+
+### Removed
+
+- 
+
+### Fixed
+
+- 
+
+### Miscellaneous
+
+- 
+
 <a name="0.1.0"></a>
 
 ## 0.1.0 (2023-10-27)
