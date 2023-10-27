@@ -1,0 +1,109 @@
+@use '_partials/_mixins' as mixins;
+
+#pixelpainterstudio.light {
+	background: #c1c1c1;
+	
+	button {
+		
+		&:not(:hover) {
+			background: #dadada;
+			color: #393939;
+		}
+		
+		&:disabled {
+			background: #aaa;
+			color: #6d6d6d;
+		}
+	}
+	
+	input[type="text"] {
+		background-color: #fff;
+		color: #393939;
+	}
+		
+	.modal {
+		@include mixins.pixel-border-image-source('888');
+		background: #c1c1c1;
+		color: #393939;
+	}
+	
+	#palette {
+		@include mixins.pixel-border-image-source('888');
+		box-shadow: none;
+		
+		&:before {
+			@include mixins.pixel-border-image-source('888');
+		}
+	}
+	
+	#tools {
+		
+		li {
+			
+			filter: invert(.15);
+			opacity: .5;
+			
+			&.active {
+				filter: invert(0);
+				opacity: .9;
+			}
+			
+			@media (hover: hover) {
+				&:hover {
+					opacity: .9;
+				}
+			}
+			
+			&:focus {
+				opacity: .9;
+			}
+
+		}
+	}
+	
+	#file-actions {
+		background: #c1c1c1;
+		box-shadow: 0px 3px 12px #777777;
+		@media not all and (orientation:portrait) {
+			@media (min-width:1028px) and (min-height:800px) {
+				background: none;
+				box-shadow: none;
+			}
+		}
+	}
+	
+	#save-files {
+		li {
+			color: #393939;
+			
+			@media (hover: hover) {
+				&:hover {
+					background: #929292;
+					color: #000;
+				}
+			}
+		}
+	}
+	
+	.copyright {
+		color: #393939;
+		
+		a {
+			color: #393939;
+			
+			@media (hover: hover) {
+				&:hover {
+					color: #000;
+				}
+			}
+		}
+	}
+	
+	&.retro {
+		background: radial-gradient(ellipse at 76% 32%, #8c8c8c 0%, #d8d8d8 14%, #737373 42%, #7d7d7d 59%, #adadad 81%, #6a6a6a 94%);
+		
+		button, input, .canvas-frame, #palette, #tools {
+			box-shadow: 0px 3px 8px #000, 0px 3px 5px #a8a8a8;
+		}
+	}
+}

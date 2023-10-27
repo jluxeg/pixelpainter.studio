@@ -1,0 +1,55 @@
+@media (min-width:1028px) and (min-height:800px) and (orientation:landscape) {
+	
+	form {
+		padding: 0 20px;
+	}
+	
+	#pixelpainterstudio {
+		grid-template-columns: auto 2fr;
+		padding: 0;
+	}
+	
+	#work-space {
+		max-width: calc(95vh - 100px);
+		max-width: calc(95dvh - 100px);
+	}
+	
+	#toolbox {
+		max-width: 540px;
+	}
+	
+	#tools {
+		
+		li {
+			height: 60px;
+			width: 60px;
+		}
+	}
+	
+	#file-actions {
+		background: none;
+		border: 0;
+		box-shadow: none;
+		grid-column: 1;
+		grid-row: 2;
+		justify-self: end;
+		max-width: 540px;
+		padding: 0;
+		position: static;
+		transform: none;
+		width: 45vw;
+		
+		&:before {
+			display: none;
+		}
+		
+		&:after {
+			display: none;
+		}
+	}
+	
+	#save-files {
+		padding: 0 20px;
+	}
+}
+

@@ -1,0 +1,172 @@
+@use '_partials/_mixins' as mixins;
+
+#pixelpainterstudio.retro {
+	background: radial-gradient(ellipse at 76% 32%, #292929 0%, #696969 14%, #292929 42%, #313131 59%, #464646 81%, #292929 94%);
+	
+	button, input, .canvas-frame, #palette, #tools {
+		box-shadow: 0px 3px 8px #000, 0px 3px 5px #a8a8a8;
+	}
+	
+	button {
+		background: #acacac;
+		border-radius: 7px;
+		box-shadow: 0px 3px 8px #000, 0px 3px 5px #0011ed;
+		    box-shadow: 0px 3px 8px #000, 0px 4px 0px #1b52ad;
+		color: #0e1e38;
+		transition: all .05s ease-in-out;
+		top: -1px;
+		
+		@media (hover: hover) {
+			&:hover {
+				background: #5a5a5a;
+				color: #0ed4ff;
+			}
+		}
+		
+		&:active {
+			background: #595959;
+			border-radius: 14px;
+			box-shadow: 0px 0px 7px #000;
+			color: #0ed4ff;
+			text-shadow: 0px 0px 6px #0ed4ff;
+			top: 2px;
+			
+			&:before {
+				box-shadow: inset -4px -4px #9bb9ea, inset 4px 4px #9bb9ea;
+			}
+		}
+		
+		&.red {
+			box-shadow: 0px 3px 8px #000, 0px 3px 5px #be1f1f;
+			    box-shadow: 0px 3px 8px #000, 0px 4px 0px #be1f1f;
+			color: #5c0c0c;
+			
+			@media (hover: hover) {
+				&:hover {
+					color: #f89f9f;
+				}
+			}
+			
+			&:active {
+				box-shadow: 0px 0px 7px #000;
+				color: #f89f9f;
+				text-shadow: 0px 0px 6px #f89f9f;
+				&:before {
+					box-shadow: inset -4px -4px #f36565, inset 4px 4px #f36565;
+				}
+			}
+			
+		}
+		&.green {
+			box-shadow: 0px 3px 8px #000, 0px 3px 5px #00d716;
+			    box-shadow: 0px 3px 8px #000, 0px 5px 3px #25802e;
+			    box-shadow: 0px 3px 8px #000, 0px 4px 0px #25802e;
+			color: #142014;
+			
+			@media (hover: hover) {
+				&:hover {
+					color: #75f775;
+				}
+			}
+			
+			&:active {
+				box-shadow: 0px 0px 7px #000;
+				color: #75f775;
+				text-shadow: 0px 0px 6px #75f775;
+				&:before {
+					box-shadow: inset -4px -4px #ccf2aa, inset 4px 4px #ccf2aa;
+				}
+			}
+			
+		}
+		&:disabled {
+			background: #6f6c6c;
+			box-shadow: 0px 3px 8px #000, 0px 3px 5px #a8a8a8;
+			color: #444;
+			top: 0;
+			
+			&:hover, &:active {
+				background: #6f6c6c;
+				border-radius: 7px;
+				box-shadow: 0px 3px 8px #000, 0px 3px 5px #a8a8a8;
+				color: #444;
+				text-shadow: none;
+				top: 0;
+				
+				&:before {
+					box-shadow: inset -4px -4px #5d5c5c, inset 4px 4px #5d5c5c;
+				}
+			}
+		}
+	}
+	
+	form {
+		padding: 0 20px;
+	}
+
+	input[type="text"] {
+		background-color: #e0e0e0;
+		color: #000;
+		margin-right: 5px;
+	}
+	
+	#tools {
+		@include mixins.pixel-border('a7f5609c');
+		background: #a7f5609c;
+		border-radius: 14px;
+		//margin: 30px auto;
+		max-width: 540px;
+		padding: 10px 20px;
+		width: 95%;
+		
+		&:after {
+			background: #8bed7d;
+			background-image: linear-gradient(to right, #be0303b0 5px, transparent 1px),  linear-gradient(#cc0303 1px, transparent 1px);
+			background-size: 58px 11px;
+			content: '';
+			height: 100%;
+			left: 0;
+			mix-blend-mode: saturation;
+			pointer-events: none;
+			position: absolute;
+			top:  0;
+			width: 100%;
+		}
+		
+		li {
+			//box-shadow: 0px 3px 12px #181818; //i kinda like the dated vibe it gives to the buttons, but i don't think they are for everyone
+			filter: invert(1) grayscale(0) hue-rotate(0);
+			opacity: .5;
+			//transition: all .1s linear; //ios causes glitch
+			
+			&.active {
+				filter: invert(0) grayscale(1) hue-rotate(177deg);
+				opacity: .7;
+			}
+			
+			@media (hover: hover) {
+				&:hover {
+					opacity: .7;
+				}
+			}
+			
+			&:active {
+				filter: invert(0) grayscale(1) hue-rotate(177deg);
+			}
+		}
+		@media (min-width:1028px) and (min-height:800px) and (orientation:landscape) {
+			width: 100%;
+			
+			li {
+				transition: all .1s linear;
+			}
+		}
+	}
+	#file-actions {
+		padding: 0;
+	}
+	
+	#save-files {
+		padding: 0 20px;
+	}
+}

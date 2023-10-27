@@ -1,0 +1,134 @@
+@media (orientation:landscape) {
+	
+	#work-space, #toolbox {
+		
+		.button-frame {
+			justify-content: space-around;
+			padding: 0;
+			position: absolute;
+			top: 0;
+			width: calc(50% - 30px);
+			
+			button {
+				margin: 10px 0;
+				white-space: nowrap;
+				width: 184px;
+			}
+		}
+	}
+	
+	#pixelpainterstudio {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding: 60px 60px 0;
+	}
+	
+	#work-space {
+		margin: 20px;
+		width: calc(95vh - 120px);
+		width: calc(95dvh - 120px);
+		
+		.button-frame {
+			left: 50%;
+		}
+	}
+	
+	.canvas-frame {
+		height: auto;
+		margin: 0;
+		max-height: none;
+		width: 100%;
+	}
+	
+	#toolbox {
+		display: flex;
+		margin: 0;
+		order: 1;
+		width: auto;
+		
+		.button-frame {
+			right: 50%;
+		}
+	}
+	
+	#palette {
+		box-shadow: 6px 0px 6px #1818184f;
+		max-width: 95%;
+		top: 0;
+		transform: translateX(-100%) translateX(30px);
+		width: 540px;
+		
+		&:before {
+			bottom: 50%;
+			box-shadow: 0px -6px 6px #1818184f;
+			display: inline-block;
+			right: 1px;
+			transform: translateX(100%) rotate(90deg) translateX(-50%);
+			transform-origin: left bottom;
+		}
+		
+		&.show-drawer {
+			transform: translateX(0);
+			
+			&:after {
+				left: 100%;
+				top: 0;
+			}
+		}
+	}
+	
+	#tools {
+		flex-direction: column;
+		height: 100%;
+		justify-content: space-around;
+		margin: 0;
+		padding: 20px 0;
+		
+		li {
+			height: 40px;
+			width: 40px;
+		}
+	}
+	
+	#file-actions {
+		bottom: 0;
+		box-shadow: -3px 0px 12px #181818;
+		max-width: 95%;
+		transform: translateX(100%) translateX(-30px);
+		width: 540px;
+		
+		&:before {
+			border-radius: 14px 14px 0 0;
+			border-top: inherit;
+			box-shadow: 0px -4px 8px #181818;
+			left: 0;
+			top: 50%;
+			transform: translateX(-100%) rotate(-90deg) translateX(50%) translateY(-100%);
+			transform-origin: right top;
+			
+			@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+				border-radius: 10px 10px 0 0;
+			}
+		}
+		
+		&.show-drawer {
+			transform: translateX(0);
+			
+			&:after {
+				right: 100%;
+				top: 0;
+			}
+		}
+	}
+	
+	#save-files {
+		flex: 1 0 1px; //helps with max-height and scrollbar display
+		max-height: none;
+	}
+	
+	.copyright {
+		margin: 0;
+		width: 100%;
+	}
+}

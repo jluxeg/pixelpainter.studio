@@ -1,0 +1,88 @@
+@media (min-width:790px) and (min-height:600px) and (orientation:landscape) {
+
+	.button-frame {
+		
+		button {
+			max-width: 48%;
+			min-width: 40%;
+			width: auto;
+		}
+	}
+	
+	#work-space, #toolbox {
+		
+		.button-frame {
+			justify-content: space-between;
+			position: static;
+			width: 100%;
+			
+			button {
+				margin: 0;
+				max-width: 48%;
+				min-width: 40%;
+				width: auto;
+			}
+		}
+	}
+	
+	#pixelpainterstudio {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-template-rows: auto 1fr;
+		padding: 0 60px 0 0;
+	}
+	
+	#work-space {
+		grid-column: 2;
+		grid-row: 1 / span 2;
+		max-width: calc(95vh - 120px);
+		max-width: calc(95dvh - 120px);
+		width: auto;
+	}
+	
+	.canvas-frame {
+		margin: 20px 0;
+	}
+	
+	#toolbox {
+		display: block;
+		grid-column: 1;
+		grid-row: 1;
+		justify-self: end;
+		margin-bottom: 50px;
+		margin-top: 20px;
+		max-width: 440px;
+		padding: 0 20px;
+		width: 45vw;
+	}
+	
+	#palette {
+		box-shadow: none;
+		max-width: none;
+		position: relative;
+		transform: none;
+		width: 100%;
+		
+		&:before {
+			display: none;
+		}
+		
+		&:after {
+			display: none;
+		}
+		
+		li {
+			height: 25px;
+			min-width: 25px;
+			width: 25px;
+		}
+	}
+	
+	#tools {
+		flex-direction: row;
+		height: auto;
+		justify-content: space-between;
+		margin: 1em 0;
+		padding: 0;
+	}
+}
