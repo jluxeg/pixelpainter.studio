@@ -8,7 +8,7 @@
 
 ### Changed
 
-- 
+- initial performance enhancements using PageSpeed insights
 
 ### Removed
 
