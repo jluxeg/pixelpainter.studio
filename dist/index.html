@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>pixelpainter.studio</title>
-		<meta name="description" content="Create and download your own icons, favicons, characters, avatars, and more using this browser based pixel art painter." />
+		<meta name="description" content="Create and download your own icons, favicons, characters, avatars, and more using this online browser based pixel art painting tool." />
 		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/favicons/apple-touch-icon-57x57.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/favicons/apple-touch-icon-114x114.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/favicons/apple-touch-icon-72x72.png" />
@@ -26,19 +26,19 @@
 		<meta name="msapplication-square150x150logo" content="assets/favicons/mstile-150x150.png" />
 		<meta name="msapplication-wide310x150logo" content="assets/favicons/mstile-310x150.png" />
 		<meta name="msapplication-square310x310logo" content="assets/favicons/mstile-310x310.png" />
-		<link href="bundle.css?v=0.1" rel="stylesheet">
+		<link href="bundle.css?v=0.1.1" rel="stylesheet">
 		<style id="backgroundcolors"></style>
 	</head>
 	<body>
-		<main id="pixelpainterstudio" class="">
+		<main id="pixelpainterstudio" class="loading">
 			<section id="toolbox">
 				<ul id="palette" data-color="000000"></ul>
 				<ul id="tools">
-					<li tabindex="0" data-tool="paintbrush" data-shortcut="b" class="active" title="paintbrush (b)" aria-label="paintbrush"><img src="assets/img/paintbrush.png" alt="paintbrush" /></li>
-					<li tabindex="0" data-tool="paintbucket" data-shortcut="g" title="paintbucket (g)" aria-label="paintbucket"><img src="assets/img/paintbucket.png" alt="paintbucket" /></li>
-					<li tabindex="0" data-tool="eraser" data-shortcut="e" title="eraser (e)" aria-label="eraser"><img src="assets/img/eraser.png" alt="eraser" /></li>
-					<li tabindex="0" data-tool="colorreplace" data-shortcut="f" title="color replace (f)" aria-label="color replace"><img src="assets/img/magicwand.png" alt="color replace" /></li>
-					<li tabindex="0" data-tool="eyedropper" data-shortcut="i" title="eyedropper (i)" aria-label="eyedropper"><img src="assets/img/eyedropper.png" alt="eyedropper" /></li>
+					<li tabindex="0" data-tool="paintbrush" data-shortcut="b" class="active" title="paintbrush (b)" aria-label="paintbrush"><img src="assets/img/paintbrush.png" alt="paintbrush" width="60" height="60" /></li>
+					<li tabindex="0" data-tool="paintbucket" data-shortcut="g" title="paintbucket (g)" aria-label="paintbucket"><img src="assets/img/paintbucket.png" alt="paintbucket" width="60" height="60" /></li>
+					<li tabindex="0" data-tool="eraser" data-shortcut="e" title="eraser (e)" aria-label="eraser"><img src="assets/img/eraser.png" alt="eraser" width="60" height="60" /></li>
+					<li tabindex="0" data-tool="colorreplace" data-shortcut="f" title="color replace (f)" aria-label="color replace"><img src="assets/img/magicwand.png" alt="color replace" width="60" height="60" /></li>
+					<li tabindex="0" data-tool="eyedropper" data-shortcut="i" title="eyedropper (i)" aria-label="eyedropper"><img src="assets/img/eyedropper.png" alt="eyedropper" width="60" height="60" /></li>
 				</ul>
 				<div class="button-frame">
 					<button id="undo" class="red" disabled>undo (<span id="undo-count">0</span>/20)</button>
@@ -56,7 +56,7 @@
 					</div>
 				</div>
 				<div class="copyright">
-					pixelpainter.studio <span style="font-size: .5em;">v</span>0.1 (<a href="https://github.com/jluxeg/pixelpainter.studio" target="_blank">GitHub</a>)
+					pixelpainter.studio <span style="font-size: .5em;">v</span>0.1.1 (<a href="https://github.com/jluxeg/pixelpainter.studio" target="_blank">GitHub</a>)
 				</div>
 			</section>
 			<section id="file-actions">
@@ -82,7 +82,7 @@
 				</div>
 			</div>
 		</main>
-		<script type="text/javascript" src="bundle.js?v=0.1"></script>
+		<script type="text/javascript" src="bundle.js?v=0.1.1"></script>
 	</body>
 </html>
 

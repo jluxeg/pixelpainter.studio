@@ -26,6 +26,7 @@
 	
 	#work-space {
 		margin: 20px;
+		padding: 0;
 		width: calc(95vh - 120px);
 		width: calc(95dvh - 120px);
 		
@@ -38,6 +39,7 @@
 		height: auto;
 		margin: 0;
 		max-height: none;
+		padding-bottom: 100%;
 		width: 100%;
 	}
 	
@@ -45,6 +47,7 @@
 		display: flex;
 		margin: 0;
 		order: 1;
+		padding: 0;
 		width: auto;
 		
 		.button-frame {

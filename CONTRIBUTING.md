@@ -37,6 +37,7 @@ Please report unacceptable behavior to justinludwiguxe@gmail.com.
 ## Making Your Contribution
 
 The rest of this document will be a step-by-step guide to setting up the repository and crafting a PR, assuming the reader has little prior knowledge.\
+Of course you can always use the [GitHub Desktop GUI](https://desktop.github.com/) to handle your interactions with git as well.\
 If anything in this document is unclear or can be improved, [open an issue](https://github.com/jluxeg/pixelpainter.studio/issues) about it.
 
 ### 1. Prepare the local development environment
@@ -247,7 +248,8 @@ Thanks again for contributing!
 ## Release Strategy
 
 The `next` branch will gather updates until a semi-stable release candidate is viable.\
-At that point a `release` branch will be created off of `next` and undergo further testing before being merged into the `master` branch with an updated release tag.
+At that point a `release` branch will be created off of `next` and undergo further testing before being merged into the `master` branch with an updated release tag.\
+If changes are minor or patch related the `relase` branch step may be skipped.
 
 
 ## License

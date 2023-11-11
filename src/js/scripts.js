@@ -12,6 +12,17 @@
 /* global jQuery */
 /* global colors */
 
+//making passive event listeners work with jQuery
+jQuery.event.special.touchstart = {
+	setup: function( _, ns, handle ) {
+		this.addEventListener("touchstart", handle, { passive: ns.includes("noPreventDefault") });
+	}
+};
+jQuery.event.special.touchmove = {
+	setup: function( _, ns, handle ) {
+		this.addEventListener("touchmove", handle, { passive: ns.includes("noPreventDefault") });
+	}
+};
 
 jQuery(document).ready(function($){
 	//global vars
@@ -142,12 +153,11 @@ jQuery(document).ready(function($){
 			if($.inArray(v, checkedPixels) !== -1 || !between(v[0], 1, 32) || !between(v[1], 1, 32)){
 				return;
 			}
-			
+			checkedPixels.push(v);
 			var pixel = $(".pixel[data-x='"+v[0]+"'][data-y='"+v[1]+"']");
 			
 			if(pixel.length > -1 && pixel.attr("data-color") == oldColor){
 				if(pixel.paintPixel()){
-					checkedPixels.push(v);
 					pixel.paintbucketCheck();
 				}
 			}
@@ -315,7 +325,7 @@ jQuery(document).ready(function($){
 	//apply palette colors
 	$.each(colors, function(i, v){
 		//add the colors to the palette
-		$("#palette").append("<li data-color='"+v.hex+"' title='"+v.name+"'>"+v.name+"</li>");
+		$("#palette").append("<li data-color='"+v.hex+"' title='"+v.name+"' aria-label='"+v.name+"'></li>");
 		
 		//add the background colors to the styles
 		//this is ok for just a set palette, since changing colors is a little simpler
@@ -331,6 +341,7 @@ jQuery(document).ready(function($){
 	}
 	
 	//give each .pixel some coordinates
+	//add class to optimize grid view
 	$(".pixel").each(function(i){
 		var gridSize = 32;
 		var x = Math.floor(i%gridSize) + 1;
@@ -338,6 +349,12 @@ jQuery(document).ready(function($){
 		
 		$(this).attr("data-x", x);
 		$(this).attr("data-y", y);
+		if(x == gridSize){
+			$(this).addClass("no-border-right");
+		}
+		if(y == gridSize){
+			$(this).addClass("no-border-bottom");
+		}
 	});
 	
 	//make sure there is localStorage
@@ -368,6 +385,11 @@ jQuery(document).ready(function($){
 		}
 		
 	}
+	
+	//remove page load overlay when the page is ready
+	document.fonts.ready.then(function () {
+		$pps.removeClass("loading");
+	});
 
 /*---End Housekeeping----*/
 
