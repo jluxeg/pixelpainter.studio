@@ -15,12 +15,12 @@
 //making passive event listeners work with jQuery
 jQuery.event.special.touchstart = {
 	setup: function( _, ns, handle ) {
-		this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+		this.addEventListener("touchstart", handle, { passive: ns.includes("noPreventDefault") });
 	}
 };
 jQuery.event.special.touchmove = {
 	setup: function( _, ns, handle ) {
-		this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+		this.addEventListener("touchmove", handle, { passive: ns.includes("noPreventDefault") });
 	}
 };
 
@@ -385,6 +385,11 @@ jQuery(document).ready(function($){
 		}
 		
 	}
+	
+	//remove page load overlay when the page is ready
+	document.fonts.ready.then(function () {
+		$pps.removeClass("loading");
+	});
 
 /*---End Housekeeping----*/
 

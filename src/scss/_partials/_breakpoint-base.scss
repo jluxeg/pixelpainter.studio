@@ -16,6 +16,7 @@
 body {
 	color: #d4d4d4;
 	font-family: 'Silkscreen', monospace, sans-serif;
+	font-size: .8em;
 	height: 100vh;
 	height: 100dvh;
 	margin: 0;
@@ -124,7 +125,6 @@ button {
 .button-frame {
 	display: flex;
 	justify-content: space-between;
-	padding: 0 2.5vw;
 	
 	button {
 		width: 48%;
@@ -194,9 +194,26 @@ form {
 	height: 100%;
 	justify-content: center;
 	overflow: hidden;
-	padding: 60px 0;
+	padding: 30px 0;
 	position: relative;
 	width: 100%;
+	
+	&.loading {
+		&:after {
+			align-items: center;
+			background: #000000bf;
+			color: #fff;
+			content: 'loading...';
+			display: flex;
+			height: 100%;
+			justify-content: center;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 5;
+		}
+	}
 	
 	&.no-grid {
 		.pixel:after {
@@ -310,6 +327,7 @@ form {
 
 #work-space {
 	order: 1;
+	padding: 0 2.5vw;
 }
 
 .canvas-frame {
@@ -318,14 +336,14 @@ form {
 	background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
 	background-size: 10px 10px;
 	border: 1px solid #000;
-	height: calc(86vh - 272px);
-	height: calc(86dvh - 272px);
-	margin: 20px auto;
+	height: calc(86vh - 180px);
+	height: calc(86dvh - 180px);
+	margin: 20px auto 10px;
 	max-height: 95vw;
 	max-width: 95vw;
 	position: relative;
-	width: calc(86vh - 272px);
-	width: calc(86dvh - 272px);
+	width: calc(86vh - 180px);
+	width: calc(86dvh - 180px);
 	
 	&:before {
 		background: red;
@@ -364,20 +382,24 @@ form {
 }
 
 #canvas {
-	align-content: flex-start;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
+	display: grid;
+	grid-column-gap: 0;
+	grid-row-gap: 0;
+	grid-template-columns: repeat(32, 1fr);
+	grid-template-rows: repeat(32, 1fr);
+	height: 100%;
+	left: 0;
 	padding: 0;
-	position: relative;
+	position: absolute;
+	top: 0;
 	width: 100%;
 }
 
 .pixel {
-	padding-bottom: 3.125%;
+	height: 100%;
 	position: relative;
 	user-select: none;
-	width: 3.125%;
+	width: 100%;
 	
 	&:after {
 		border-bottom: 1px dashed #aaa;
@@ -402,6 +424,7 @@ form {
 
 #toolbox {
 	order: 2;
+	padding: 0 2.5vw;
 }
 
 #palette {
@@ -420,7 +443,7 @@ form {
 	margin: 0;
 	padding: 30px 20px;
 	position: absolute;
-	transform: translateY(100%) translateY(-30px);
+	transform: translateY(100%) translateY(-5px);
 	transition: transform .25s ease-in-out;
 	width: 100%;
 	z-index: 3;
@@ -495,7 +518,7 @@ form {
 	justify-content: space-between;
 	list-style-type: none;
 	max-width: 540px;
-	margin: 20px auto;
+	margin: 10px auto 20px;
 	padding: 0 2.5vw;
 	
 	li {
@@ -503,11 +526,11 @@ form {
 		cursor: pointer;
 		display: flex;
 		filter: invert(.8);
-		height: 60px;
+		height: 40px;
 		justify-content: center;
 		opacity: .7;
 		user-select: none;
-		width: 60px;
+		width: 40px;
 		
 		&.active {
 			filter: invert(.15);
@@ -543,7 +566,7 @@ form {
 	position: absolute;
 	right: 0;
 	top: 0;
-	transform: translateY(-100%) translateY(30px);
+	transform: translateY(-100%) translateY(5px);
 	transition: transform .25s ease-in-out;
 	width: 100%;
 	z-index: 2;
@@ -658,8 +681,8 @@ form {
 	color: #aaa;
 	margin: 0 auto;
 	max-width: 95vw;
-	width: calc(86vh - 272px);
-	width: calc(86dvh - 272px);
+	width: calc(86vh - 180px);
+	width: calc(86dvh - 180px);
 	
 	a {
 		color: #aaa;
@@ -670,6 +693,45 @@ form {
 				color: #fff;
 			}
 		}
+	}
+}
+
+//for taller phones
+@media (min-height:700px){
+	
+	body {
+		font-size: 1em;
+	}
+	
+	#pixelpainterstudio {
+		padding: 60px 0;
+	}
+	
+	.canvas-frame {
+		height: calc(86vh - 272px);
+		height: calc(86dvh - 272px);
+		width: calc(86vh - 272px);
+		width: calc(86dvh - 272px);
+	}
+	
+	#palette {
+		transform: translateY(100%) translateY(-30px);
+	}
+	
+	#tools li {
+		height: 50px;
+		width: 50px;
+	}
+	
+	#file-actions {
+		transform: translateY(-100%) translateY(30px);
+	}
+	
+	.copyright {
+		font-size: .8em;
+		margin-bottom: 10px;
+		width: calc(86vh - 272px);
+		width: calc(86dvh - 272px);
 	}
 }
 

@@ -4,7 +4,7 @@
 
 ### Added
 
-- 
+- page load overlay
 
 ### Changed
 
@@ -16,7 +16,7 @@
 
 ### Fixed
 
-- 
+- improved display for smaller phones
 
 ### Miscellaneous
 
