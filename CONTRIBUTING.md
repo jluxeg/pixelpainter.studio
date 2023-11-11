@@ -248,7 +248,8 @@ Thanks again for contributing!
 ## Release Strategy
 
 The `next` branch will gather updates until a semi-stable release candidate is viable.\
-At that point a `release` branch will be created off of `next` and undergo further testing before being merged into the `master` branch with an updated release tag.
+At that point a `release` branch will be created off of `next` and undergo further testing before being merged into the `master` branch with an updated release tag.\
+If changes are minor or patch related the `relase` branch step may be skipped.
 
 
 ## License

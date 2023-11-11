@@ -1,6 +1,23 @@
 # Changelog
 
-## Unreleased
+<!--- template
+## Unreleased 
+
+### Added
+
+### Changed
+
+### Removed
+
+### Fixed
+
+### Miscellaneous
+
+-->
+
+<a name="0.1.1"></a>
+
+## 0.1.1 (2023-11-11)
 
 ### Added
 
@@ -10,17 +27,10 @@
 
 - initial performance enhancements using PageSpeed insights
 
-### Removed
-
-- 
-
 ### Fixed
 
-- improved display for smaller phones
+- improved portrait display for smaller phones
 
-### Miscellaneous
-
-- 
 
 <a name="0.1.0"></a>
 

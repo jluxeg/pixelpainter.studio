@@ -1,4 +1,4 @@
-# pixelpainter.studio v0.1
+# pixelpainter.studio v0.1.1
 
 [Try pixelpainter.studio now!](https://pixelpainter.studio)
 
@@ -57,7 +57,7 @@ You can see everyone who has contributed so far, [here](CONTRIBUTORS.md).
 
 ## Acknowledgements
 
-- pixelpainter.studio v0.1 is built using jQuery
+- pixelpainter.studio is built using jQuery
 - [html-to-image](https://github.com/bubkoo/html-to-image) is from [崖 @bubkoo](https://github.com/bubkoo)
 - [download](https://github.com/rndme/download) is from [dandavis @rndme](https://github.com/rndme)
 - buttons were inspired by [pixel-borders](https://github.com/NigelOToole/pixel-borders) from [Nigel O Toole @NigelOToole](https://github.com/NigelOToole)
