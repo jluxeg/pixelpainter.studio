@@ -1,0 +1,43 @@
+[[redirects]]
+  from = "https://pixelpainterstudio.com/*"
+  to = "https://pixelpainter.studio/:splat"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.pixelpainterstudio.com/*"
+  to = "https://pixelpainter.studio/:splat"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://pixelpainter.pro/*"
+  to = "https://pixelpainter.studio/:splat"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.pixelpainter.pro/*"
+  to = "https://pixelpainter.studio/:splat"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://pixelpainterpro.com/*"
+  to = "https://pixelpainter.studio/:splat"
+  status = 301
+  force = true  
+[[redirects]]
+  from = "https://www.pixelpainterpro.com/*"
+  to = "https://pixelpainter.studio/:splat"
+  status = 301
+  force = true  
+  
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
